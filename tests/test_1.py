@@ -15,4 +15,3 @@ def test_2():
 def test_get():
     resp = requests.get(url=SERVICE_URL)
     print(resp.json())
-
