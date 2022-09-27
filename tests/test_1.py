@@ -17,4 +17,8 @@ def test_get():
     assert resp.status_code == 200, \
         ErrorMessage.WRONG_STATUS_CODE.value
 
-    print(resp.json())
+    resp_data = resp.json()
+    assert len(resp_data) == 3, \
+        ErrorMessage.WRONG_STATUS_CODE.value
+
+    print(resp_data)
