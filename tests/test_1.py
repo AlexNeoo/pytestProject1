@@ -19,6 +19,6 @@ def test_get():
 
     resp_data = resp.json()
     assert len(resp_data) == 3, \
-        ErrorMessage.WRONG_STATUS_CODE.value
+        ErrorMessage.WRONG_MESSAGE_LEN.value
 
     print(resp_data)
