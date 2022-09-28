@@ -1,6 +1,6 @@
 import requests
-from jsonschema import validate
-from config import SERVICE_URL, ErrorMessage, POST_SCHEMA
+from config import SERVICE_URL
+from helper_json import ValidateJson
 
 
 def test_1():
@@ -15,14 +15,6 @@ def test_2():
 
 def test_get():
     resp = requests.get(url=SERVICE_URL)
-    assert resp.status_code == 200, \
-        ErrorMessage.WRONG_STATUS_CODE.value
-
-    resp_data = resp.json()
-    assert len(resp_data) == 3, \
-        ErrorMessage.WRONG_MESSAGE_LEN.value
-
-    for item in resp_data:
-        validate(item, POST_SCHEMA)
-
-    print(resp_data)
+    ValidateJson(resp).check_status_code()
+    ValidateJson(resp).check_len()
+    ValidateJson.check_schema()
