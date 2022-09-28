@@ -17,4 +17,4 @@ def test_get():
     resp = requests.get(url=SERVICE_URL)
     ValidateJson(resp).check_status_code()
     ValidateJson(resp).check_len()
-    ValidateJson.check_schema()
+    ValidateJson(resp).check_schema()
