@@ -6,7 +6,9 @@ POST_SCHEMA = {
     "type": "object",
     "properties": {
         "id": {"type": "number"},
-        "title": {"title": "string", "enum": ["Post"]},
+        "title": {"title": "string",
+                  #"enum": ["Post*"]
+                  },
     },
     "required":["id"]
 }
