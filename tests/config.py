@@ -10,7 +10,7 @@ POST_SCHEMA = {
                   #"enum": ["Post*"]
                   },
     },
-    "required":["id"]
+    "required": ["id"]
 }
 
 
