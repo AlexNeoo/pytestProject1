@@ -1,18 +1,23 @@
-import requests
 from jsonschema import validate
-from config import SERVICE_URL, ErrorMessage, POST_SCHEMA
+from config import  ErrorMessage, POST_SCHEMA
 
 
-def test_get():
-    resp = requests.get(url=SERVICE_URL)
-    assert resp.status_code == 200, \
-        ErrorMessage.WRONG_STATUS_CODE.value
+class ValidateJson:
+    def __init__(self, data):
+        self.data = data
 
-    resp_data = resp.json()
-    assert len(resp_data) == 3, \
-        ErrorMessage.WRONG_MESSAGE_LEN.value
+    def check_status_code(self):
+        assert self.data.status_code == 200, \
+            ErrorMessage.WRONG_STATUS_CODE.value
 
-    for item in resp_data:
-        validate(item, POST_SCHEMA)
+    def check_len(self):
+        resp_data = self.data.json()
+        assert len(resp_data) == 3, \
+            ErrorMessage.WRONG_MESSAGE_LEN.value
+        print(resp_data)
 
-    print(resp_data)
+    def check_schema(self):
+        resp_data = self.data.json()
+        for item in resp_data:
+            validate(item, POST_SCHEMA)
+        print(resp_data)
