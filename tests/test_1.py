@@ -1,6 +1,6 @@
 import requests
 from jsonschema import validate
-from config import SERVICE_URL, ErrorMessage
+from config import SERVICE_URL, ErrorMessage, POST_SCHEMA
 
 
 def test_1():
@@ -21,6 +21,8 @@ def test_get():
     resp_data = resp.json()
     assert len(resp_data) == 3, \
         ErrorMessage.WRONG_MESSAGE_LEN.value
-    validate(resp_data, )
+
+    for item in resp_data:
+        validate(item, POST_SCHEMA)
 
     print(resp_data)
