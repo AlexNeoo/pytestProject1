@@ -5,11 +5,10 @@ SERVICE_URL = "https://my-json-server.typicode.com/typicode/demo/posts"
 POST_SCHEMA = {
     "type": "object",
     "properties": {
-        "id":{"type":"number"},
-        "id":{"title":"string"},
-        "id":{"type":"number"},
+        "id": {"type": "number"},
+        "title": {"title": "string", "enum": ["Post"]},
     },
-    "required":[*id*]
+    "required":["id"]
 }
 
 
