@@ -13,7 +13,7 @@ def test_2():
     print("Not Equal !!!")
 
 
-def test_get():
+def test_3():
     resp = requests.get(url=SERVICE_URL)
 
     ValidateJson(resp).check_status_code()
@@ -21,7 +21,7 @@ def test_get():
     ValidateJson(resp).check_schema()
 
 
-def test_get_pydentic():
+def test_4():
     resp = requests.get(url=SERVICE_URL)
 
     ValidateJsonPydantic(resp).check_status_code()

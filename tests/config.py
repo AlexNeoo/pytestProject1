@@ -19,7 +19,7 @@ POST_SCHEMA = {
 class PydanticPost(BaseModel):
     id: int
     title: str
-    nane: str = Field(alias="_nane")
+    # nane: str = Field(alias="_nane")
 
     @validator("id")
     def check_id(cls, value):
