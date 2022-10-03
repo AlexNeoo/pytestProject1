@@ -23,7 +23,7 @@ class PydanticPost(BaseModel):
 
     @validator("id")
     def check_id(cls, value):
-        if value >= 5:
+        if value >= 4:
             raise ValueError(ErrorMessage.WRONG_ID_LEN.value)
         else:
             return value
