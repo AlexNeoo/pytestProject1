@@ -1,5 +1,5 @@
 from jsonschema import validate
-from config import  ErrorMessage, POST_SCHEMA
+from config import ErrorMessage, POST_SCHEMA
 
 
 class ValidateJson:
@@ -30,5 +30,5 @@ class ValidateJsonPydantic(ValidateJson):
     def check_schema(self):
         resp_data = self.data.json()
         for item in resp_data:
-            validate(item, POST_SCHEMA)
+            self.data.parse_obj(item)
         print(resp_data)
