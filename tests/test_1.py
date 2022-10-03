@@ -1,6 +1,6 @@
 import requests
 from config import SERVICE_URL
-from helper_json import ValidateJson
+from helper_json import ValidateJson, ValidateJsonPydantic
 
 
 def test_1():
@@ -20,9 +20,9 @@ def test_get():
     ValidateJson(resp).check_len()
     ValidateJson(resp).check_schema()
 
-def test_get1():
+def test_get_pydentic():
     resp = requests.get(url=SERVICE_URL)
 
-    ValidateJson(resp).check_status_code()
-    ValidateJson(resp).check_len()
-    ValidateJson(resp).check_schema()
+    ValidateJsonPydantic(resp).check_status_code()
+    ValidateJsonPydantic(resp).check_len()
+    ValidateJsonPydantic(resp).check_schema()
