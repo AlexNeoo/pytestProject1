@@ -1,5 +1,5 @@
 from enum import Enum
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, validator, Field
 
 
 SERVICE_URL = "https://my-json-server.typicode.com/typicode/demo/posts"
@@ -19,6 +19,7 @@ POST_SCHEMA = {
 class PydanticPost(BaseModel):
     id: int
     title: str
+    nane: str = Field(alias="_nane")
 
     @validator("id")
     def check_id(cls, value):
