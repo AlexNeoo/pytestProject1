@@ -21,3 +21,14 @@ class ValidateJson:
         for item in resp_data:
             validate(item, POST_SCHEMA)
         print(resp_data)
+
+
+class ValidateJsonPydantic(ValidateJson):
+    def __init__(self, data):
+        self.data = data
+
+    def check_schema(self):
+        resp_data = self.data.json()
+        for item in resp_data:
+            validate(item, POST_SCHEMA)
+        print(resp_data)
