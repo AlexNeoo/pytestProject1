@@ -1,5 +1,5 @@
 from jsonschema import validate
-from config import ErrorMessage, POST_SCHEMA
+from config import ErrorMessage, POST_SCHEMA, PydanticPost
 
 
 class ValidateJson:
@@ -25,10 +25,10 @@ class ValidateJson:
 
 class ValidateJsonPydantic(ValidateJson):
     def __init__(self, data):
-        self.data = data
+        super().__init__(data)
 
     def check_schema(self):
         resp_data = self.data.json()
         for item in resp_data:
-            self.data.parse_obj(item)
+            PydanticPost.parse_obj(item)
         print(resp_data)
