@@ -20,6 +20,7 @@ def test_get():
     ValidateJson(resp).check_len()
     ValidateJson(resp).check_schema()
 
+
 def test_get_pydentic():
     resp = requests.get(url=SERVICE_URL)
 
