@@ -30,6 +30,7 @@ class PydanticPost(BaseModel):
         else:
             return value
 
+
 class BitcoinPost(BaseModel):
     disclaimer: str
     chartName: str
@@ -38,7 +39,7 @@ class BitcoinPost(BaseModel):
     @validator("chartName")
     def check_chartName(cls, value):
         if value != "Bitcoin":
-            raise ValueError(ErrorMessage.WRONG_ID_LEN.value)
+            raise ValueError(ErrorMessage.WRONG_FIELD_VAL.value)
         else:
             return value
 
@@ -75,6 +76,7 @@ class BitcoinPost(BaseModel):
 #         }
 #     }
 # }
+
 
 class ErrorMessage(Enum):
     WRONG_STATUS_CODE = "Actual code is Not equal to expected"
