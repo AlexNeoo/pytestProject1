@@ -44,4 +44,3 @@ class ValidateBitcoin(ValidateJson):
         for item in resp_data:
             # print(item)
             BitcoinPost.parse_obj(item)
-        print(resp_data)
