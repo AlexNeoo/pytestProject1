@@ -32,9 +32,8 @@ class PydanticPost(BaseModel):
 
 
 class BitcoinPost(BaseModel):
-    pass
-    # disclaimer: str
-    # chartName: str
+    symbol: str
+    priceChange: float
     # nane: str = Field(alias="_nane")
     #
     # @validator("chartName")
@@ -44,39 +43,53 @@ class BitcoinPost(BaseModel):
     #     else:
     #         return value
 
-#
-# {
-#     "time": {
-#         "updated": "Oct 5, 2022 22:05:00 UTC",
-#         "updatedISO": "2022-10-05T22:05:00+00:00",
-#         "updateduk": "Oct 5, 2022 at 23:05 BST\n"
-#     },
-#     "disclaimer": "This data was produced from the CoinDesk Bitcoin Price Index (USD). Non-USD currency data converted using hourly conversion rate from o\npenexchangerates.org",
-#     "chartName": "Bitcoin",
-#     "bpi": {
-#         "USD": {
-#             "code": "USD",
-#             "symbol": "&#36;",
-#             "rate": "20,053.4841",
-#             "description": "United States Doll\nar",
-#             "rate_float": 20053.4841
-#         },
-#         "GBP": {
-#             "code": "GBP",
-#             "symbol": "&pound;",
-#             "rate": "16,756.5309",
-#             "description": "British Pound Sterling",
-#             "rate_float": 16756.5309
-#         },
-#         "EUR": {
-#             "code": "EUR",
-#             "symbol": "&euro;",
-#             "rate": "19,535.0213",
-#             "description": "Euro",
-#             "rate_float": 19535.0213
-#         }
-#     }
-# }
+# [
+#   {
+#     "symbol": "ETHBTC",
+#     "priceChange": "0.00029200",
+#     "priceChangePercent": "0.436",
+#     "weightedAvgPrice": "0.06689296",
+#     "prevClosePrice": "0.06693000",
+#     "lastPrice": "0.06722300",
+#     "lastQty": "0.95220000",
+#     "bidPrice": "0.06722300",
+#     "bidQty": "21.97560000",
+#     "askPrice": "0.06722400",
+#     "askQty": "30.34010000",
+#     "openPrice": "0.06693100",
+#     "highPrice": "0.06738500",
+#     "lowPrice": "0.06635000",
+#     "volume": "101014.11040000",
+#     "quoteVolume": "6757.13236649",
+#     "openTime": 1664923432391,
+#     "closeTime": 1665009832391,
+#     "firstId": 379842112,
+#     "lastId": 380073581,
+#     "count": 231470
+#   },
+#   {
+#     "symbol": "LTCBTC",
+#     "priceChange": "-0.00002600",
+#     "priceChangePercent": "-0.953",
+#     "weightedAvgPrice": "0.00270518",
+#     "prevClosePrice": "0.00272700",
+#     "lastPrice": "0.00270100",
+#     "lastQty": "0.64000000",
+#     "bidPrice": "0.00270100",
+#     "bidQty": "28.50000000",
+#     "askPrice": "0.00270200",
+#     "askQty": "35.99800000",
+#     "openPrice": "0.00272700",
+#     "highPrice": "0.00273100",
+#     "lowPrice": "0.00268100",
+#     "volume": "56643.03200000",
+#     "quoteVolume": "153.22942816",
+#     "openTime": 1664923430489,
+#     "closeTime": 1665009830489,
+#     "firstId": 84103229,
+#     "lastId": 84120619,
+#     "count": 17391
+#   },
 
 
 class ErrorMessage(Enum):
