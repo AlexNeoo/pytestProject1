@@ -12,6 +12,7 @@ class ValidateJson:
 
     def check_len(self, dlina=3):
         resp_data = self.data.json()
+        print(len(resp_data))
         assert len(resp_data) == dlina, \
             ErrorMessage.WRONG_MESSAGE_LEN.value
 

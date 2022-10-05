@@ -33,5 +33,5 @@ def test_5():
     resp = requests.get(url=SERVICE_URL_W)
     ValidateBitcoin(resp).check_status_code()
     print(resp.json())
-    # ValidateJsonPydantic(resp).check_len()
+    ValidateJsonPydantic(resp).check_len()
     # ValidateJsonPydantic(resp).check_schema()
