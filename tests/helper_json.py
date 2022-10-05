@@ -40,6 +40,8 @@ class ValidateBitcoin(ValidateJson):
 
     def check_schema(self):
         resp_data = self.data.json()
+        # print(resp_data)
         for item in resp_data:
+            # print(item)
             BitcoinPost.parse_obj(item)
         print(resp_data)

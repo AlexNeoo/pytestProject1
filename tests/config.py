@@ -4,7 +4,7 @@ from pydantic import BaseModel, validator, Field
 
 SERVICE_URL = "https://my-json-server.typicode.com/typicode/demo/posts"
 
-SERVICE_URL_W = "https://api.coindesk.com/v1/bpi/currentprice.json"
+SERVICE_URL_W = "https://api2.binance.com/api/v3/ticker/24hr"
 
 POST_SCHEMA = {
     "type": "object",
@@ -32,16 +32,17 @@ class PydanticPost(BaseModel):
 
 
 class BitcoinPost(BaseModel):
-    disclaimer: str
-    chartName: str
+    pass
+    # disclaimer: str
+    # chartName: str
     # nane: str = Field(alias="_nane")
-
-    @validator("chartName")
-    def check_chartName(cls, value):
-        if value != "Bitcoin":
-            raise ValueError(ErrorMessage.WRONG_FIELD_VAL.value)
-        else:
-            return value
+    #
+    # @validator("chartName")
+    # def check_chartName(cls, value):
+    #     if value != "Bitcoin":
+    #         raise ValueError(ErrorMessage.WRONG_FIELD_VAL.value)
+    #     else:
+    #         return value
 
 #
 # {
