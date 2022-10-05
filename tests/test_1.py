@@ -31,7 +31,7 @@ def test_4():
 
 def test_5():
     resp = requests.get(url=SERVICE_URL_W)
-
     ValidateJsonPydantic(resp).check_status_code()
+    print(resp)
     # ValidateJsonPydantic(resp).check_len()
     # ValidateJsonPydantic(resp).check_schema()
