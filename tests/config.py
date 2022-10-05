@@ -4,6 +4,8 @@ from pydantic import BaseModel, validator, Field
 
 SERVICE_URL = "https://my-json-server.typicode.com/typicode/demo/posts"
 
+SERVICE_URL_W = "https://gorest.co.in/public/v1/users"
+
 POST_SCHEMA = {
     "type": "object",
     "properties": {
