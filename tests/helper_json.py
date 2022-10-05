@@ -10,9 +10,9 @@ class ValidateJson:
         assert self.data.status_code == 200, \
             ErrorMessage.WRONG_STATUS_CODE.value
 
-    def check_len(self):
+    def check_len(self, dlina=3):
         resp_data = self.data.json()
-        assert len(resp_data) == 3, \
+        assert len(resp_data) == dlina, \
             ErrorMessage.WRONG_MESSAGE_LEN.value
 
     def check_schema(self):
