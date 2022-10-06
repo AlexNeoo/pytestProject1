@@ -43,4 +43,5 @@ class ValidateBitcoin(ValidateJson):
         # print(resp_data)
         for item in resp_data:
             # print(item)
+            # print("\n")
             post.parse_obj(item)
