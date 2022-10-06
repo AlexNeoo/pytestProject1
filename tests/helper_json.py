@@ -46,8 +46,3 @@ class ValidateBitcoin(ValidateJson):
             # print(item)
             # print("\n")
             post.parse_obj(item)
-
-
-@pytest.fixture
-def hello():
-    print(hello)

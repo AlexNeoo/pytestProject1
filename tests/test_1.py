@@ -3,7 +3,7 @@ from config import SERVICE_URL, SERVICE_URL_W, BitcoinPost
 from helper_json import ValidateJson, ValidateJsonPydantic, ValidateBitcoin
 
 
-def test_1():
+def test_1(start):
     assert 1 == 1, "not equal !!!"
     print("Equal !!!")
 
