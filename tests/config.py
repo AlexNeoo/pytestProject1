@@ -34,6 +34,7 @@ class PydanticPost(BaseModel):
 class BitcoinPost(BaseModel):
     symbol: str
     priceChange: float
+    count: int
     # nane: str = Field(alias="_nane")
     #
     # @validator("chartName")
