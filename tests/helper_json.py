@@ -1,3 +1,4 @@
+import pytest
 from jsonschema import validate
 from config import ErrorMessage, POST_SCHEMA, PydanticPost, BitcoinPost
 
@@ -45,3 +46,8 @@ class ValidateBitcoin(ValidateJson):
             # print(item)
             # print("\n")
             post.parse_obj(item)
+
+
+@pytest.fixture
+def hello():
+    print(hello)
