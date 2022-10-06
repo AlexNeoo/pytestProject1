@@ -6,8 +6,8 @@ class ValidateJson:
     def __init__(self, data):
         self.data = data
 
-    def check_status_code(self):
-        assert self.data.status_code == 200, \
+    def check_status_code(self, code=200):
+        assert self.data.status_code == code, \
             ErrorMessage.WRONG_STATUS_CODE.value
 
     def check_len(self, dlina=3):
@@ -38,9 +38,9 @@ class ValidateBitcoin(ValidateJson):
     def __init__(self, data):
         super().__init__(data)
 
-    def check_schema(self):
+    def check_schema(self, post):
         resp_data = self.data.json()
         # print(resp_data)
         for item in resp_data:
             # print(item)
-            BitcoinPost.parse_obj(item)
+            post.parse_obj(item)

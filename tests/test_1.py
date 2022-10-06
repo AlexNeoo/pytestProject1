@@ -1,5 +1,5 @@
 import requests
-from config import SERVICE_URL, SERVICE_URL_W
+from config import SERVICE_URL, SERVICE_URL_W, BitcoinPost
 from helper_json import ValidateJson, ValidateJsonPydantic, ValidateBitcoin
 
 
@@ -33,4 +33,4 @@ def test_5():
     resp = requests.get(url=SERVICE_URL_W)
     ValidateBitcoin(resp).check_status_code()
     ValidateBitcoin(resp).check_len(dlina=2104)
-    ValidateBitcoin(resp).check_schema()
+    ValidateBitcoin(resp).check_schema(BitcoinPost)
